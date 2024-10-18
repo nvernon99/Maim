@@ -35,8 +35,8 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-unknown-linux-gnu
-host_triplet = x86_64-unknown-linux-gnu
+build_triplet = i686-apple-darwin23.6.0
+host_triplet = arm-apple-darwin
 ANSI2KNR = $(top_srcdir)/ansi2knr
 DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(top_srcdir)/Makefile.am.global depcomp
@@ -89,17 +89,17 @@ HEADERS = $(noinst_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/arden/projects/plugins/Maim/Source/lib/lame/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame/missing --run aclocal-1.11
 ALLOCA = 
-AMTAR = ${SHELL} /home/arden/projects/plugins/Maim/Source/lib/lame/missing --run tar
+AMTAR = ${SHELL} /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame/missing --run tar
 AR = ar
-AUTOCONF = ${SHELL} /home/arden/projects/plugins/Maim/Source/lib/lame/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/arden/projects/plugins/Maim/Source/lib/lame/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/arden/projects/plugins/Maim/Source/lib/lame/missing --run automake-1.11
-AWK = mawk
+AUTOCONF = ${SHELL} /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame/missing --run autoconf
+AUTOHEADER = ${SHELL} /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame/missing --run autoheader
+AUTOMAKE = ${SHELL} /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame/missing --run automake-1.11
+AWK = awk
 CC = gcc
-CCDEPMODE = depmode=gcc3
-CFLAGS = -O -g -Wall -Wall -pipe -fPIC    
+CCDEPMODE = depmode=none
+CFLAGS =  -Wall -arch arm64 -pipe -std=c99 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk -miphoneos-version-min=12.0 -fno-common    
 CONFIG_DEFS = 
 CONFIG_MATH_LIB = -lm
 CPP = gcc -E
@@ -109,16 +109,16 @@ CPUTYPE = no
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H 
 DEPDIR = .deps
-DSYMUTIL = 
-DUMPBIN = 
-ECHO_C = 
-ECHO_N = -n
+DSYMUTIL = dsymutil
+DUMPBIN = :
+ECHO_C = \c
+ECHO_N = 
 ECHO_T = 
 EGREP = /usr/bin/grep -E
 EXEEXT = 
 FGREP = /usr/bin/grep -F
 FRONTEND_CFLAGS =  
-FRONTEND_LDADD =   -lm
+FRONTEND_LDADD = -lncurses  -liconv -lm
 FRONTEND_LDFLAGS =  -static
 GREP = /usr/bin/grep
 GTK_CFLAGS = 
@@ -130,35 +130,35 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LD = /usr/bin/ld -m elf_x86_64
+LD = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
 LDADD =  \
 	$(top_builddir)/libmp3lame/libmp3lame.la \
-	  -lm
+	-lncurses  -liconv -lm
 
 LDFLAGS =   -static 
-LIBICONV = 
+LIBICONV = -liconv
 LIBOBJS = 
 LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_DEPS = ./ltmain.sh
 LIB_MAJOR_VERSION = 0
 LIB_MINOR_VERSION = 0
-LIPO = 
+LIPO = lipo
 LN_S = ln -s
-LTLIBICONV = 
+LTLIBICONV = -liconv
 LTLIBOBJS = 
 MAINT = #
-MAKEDEP = -M
-MAKEINFO = ${SHELL} /home/arden/projects/plugins/Maim/Source/lib/lame/missing --run makeinfo
-MKDIR_P = /usr/bin/mkdir -p
+MAKEDEP = -make
+MAKEINFO = ${SHELL} /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame/missing --run makeinfo
+MKDIR_P = .././install-sh -c -d
 NASM = no
-NASM_FORMAT = -f elf
-NM = /usr/bin/nm -B
-NMEDIT = 
+NASM_FORMAT = -f macho
+NM = nm
+NMEDIT = nmedit
 OBJDUMP = objdump
 OBJEXT = o
-OTOOL = 
-OTOOL64 = 
+OTOOL = otool
+OTOOL64 = :
 PACKAGE = lame
 PACKAGE_BUGREPORT = lame-dev@lists.sf.net
 PACKAGE_NAME = lame
@@ -174,7 +174,7 @@ RANLIB = ranlib
 RM_F = rm -f
 SED = /usr/bin/sed
 SET_MAKE = 
-SHELL = /bin/bash
+SHELL = /bin/sh
 SNDFILE_CFLAGS = 
 SNDFILE_LIBS = 
 STRIP = strip
@@ -183,44 +183,44 @@ VERSION = 3.99.5
 WITH_FRONTEND = 
 WITH_MP3RTP = 
 WITH_MP3X = 
-abs_builddir = /home/arden/projects/plugins/Maim/Source/lib/lame/frontend
-abs_srcdir = /home/arden/projects/plugins/Maim/Source/lib/lame/frontend
-abs_top_builddir = /home/arden/projects/plugins/Maim/Source/lib/lame
-abs_top_srcdir = /home/arden/projects/plugins/Maim/Source/lib/lame
+abs_builddir = /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame/frontend
+abs_srcdir = /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame/frontend
+abs_top_builddir = /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame
+abs_top_srcdir = /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame
 ac_ct_CC = gcc
-ac_ct_DUMPBIN = 
+ac_ct_DUMPBIN = link -dump
 am__include = include
 am__leading_dot = .
 am__quote = 
 am__tar = ${AMTAR} chof - "$$tardir"
 am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
-build = x86_64-unknown-linux-gnu
+build = i686-apple-darwin23.6.0
 build_alias = 
-build_cpu = x86_64
-build_os = linux-gnu
-build_vendor = unknown
+build_cpu = i686
+build_os = darwin23.6.0
+build_vendor = apple
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-unknown-linux-gnu
-host_alias = 
-host_cpu = x86_64
-host_os = linux-gnu
-host_vendor = unknown
+host = arm-apple-darwin
+host_alias = arm-apple-darwin
+host_cpu = arm
+host_os = darwin
+host_vendor = apple
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/arden/projects/plugins/Maim/Source/lib/lame/install-sh
+install_sh = ${SHELL} /Users/nolan/documents/github/third-party-plugins/plugins/maim/lib/lame/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
 mandir = ${datarootdir}/man
-mkdir_p = /usr/bin/mkdir -p
+mkdir_p = $(top_builddir)/./install-sh -c -d
 oldincludedir = /usr/include
 pdfdir = ${docdir}
 prefix = /usr/local
@@ -374,40 +374,40 @@ $(top_srcdir)/ansi2knr:
 mostlyclean-kr:
 	-test "$U" = "" || rm -f *_.c
 
-include ./$(DEPDIR)/brhist$U.Po
-include ./$(DEPDIR)/console$U.Po
-include ./$(DEPDIR)/get_audio$U.Po
-include ./$(DEPDIR)/gpkplotting$U.Po
-include ./$(DEPDIR)/gtkanal$U.Po
-include ./$(DEPDIR)/lame_main$U.Po
-include ./$(DEPDIR)/lametime$U.Po
-include ./$(DEPDIR)/main$U.Po
-include ./$(DEPDIR)/mp3rtp$U.Po
-include ./$(DEPDIR)/mp3x$U.Po
-include ./$(DEPDIR)/parse$U.Po
-include ./$(DEPDIR)/rtp$U.Po
-include ./$(DEPDIR)/timestatus$U.Po
+#include ./$(DEPDIR)/brhist$U.Po
+#include ./$(DEPDIR)/console$U.Po
+#include ./$(DEPDIR)/get_audio$U.Po
+#include ./$(DEPDIR)/gpkplotting$U.Po
+#include ./$(DEPDIR)/gtkanal$U.Po
+#include ./$(DEPDIR)/lame_main$U.Po
+#include ./$(DEPDIR)/lametime$U.Po
+#include ./$(DEPDIR)/main$U.Po
+#include ./$(DEPDIR)/mp3rtp$U.Po
+#include ./$(DEPDIR)/mp3x$U.Po
+#include ./$(DEPDIR)/parse$U.Po
+#include ./$(DEPDIR)/rtp$U.Po
+#include ./$(DEPDIR)/timestatus$U.Po
 
 .c.o:
-	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(COMPILE) -c $<
+#	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	source='$<' object='$@' libtool=no 
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
+	$(COMPILE) -c $<
 
 .c.obj:
-	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(COMPILE) -c `$(CYGPATH_W) '$<'`
+#	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+#	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	source='$<' object='$@' libtool=no 
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
+	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-	$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-#	source='$<' object='$@' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(LTCOMPILE) -c -o $@ $<
+#	$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	source='$<' object='$@' libtool=yes 
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
+	$(LTCOMPILE) -c -o $@ $<
 brhist_.c: brhist.c $(ANSI2KNR)
 	$(CPP) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/brhist.c; then echo $(srcdir)/brhist.c; else echo brhist.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > $@ || rm -f $@
 console_.c: console.c $(ANSI2KNR)

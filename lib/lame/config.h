@@ -5,7 +5,7 @@
 #define LAME_CONFIG_H
 
 /* debug define */
-#define ABORTFP 1
+/* #undef ABORTFP */
 
 /* Define if building universal (internal helper macro) */
 /* #undef AC_APPLE_UNIVERSAL_BUILD */
@@ -106,15 +106,15 @@
 #define HAVE_LIMITS_H 1
 
 /* Define to 1 if you have the <linux/soundcard.h> header file. */
-#define HAVE_LINUX_SOUNDCARD_H 1
+/* #undef HAVE_LINUX_SOUNDCARD_H */
 
 /* Define to 1 if the type `long double' works and has more range or precision
    than `double'. */
-#define HAVE_LONG_DOUBLE 1
+/* #undef HAVE_LONG_DOUBLE */
 
 /* Define to 1 if the type `long double' works and has more range or precision
    than `double'. */
-#define HAVE_LONG_DOUBLE_WIDER 1
+/* #undef HAVE_LONG_DOUBLE_WIDER */
 
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1
@@ -147,7 +147,7 @@
 #define HAVE_STRTOL 1
 
 /* Define to 1 if you have the <sys/soundcard.h> header file. */
-#define HAVE_SYS_SOUNDCARD_H 1
+/* #undef HAVE_SYS_SOUNDCARD_H */
 
 /* Define to 1 if you have the <sys/stat.h> header file. */
 #define HAVE_SYS_STAT_H 1
@@ -159,7 +159,7 @@
 #define HAVE_SYS_TYPES_H 1
 
 /* have termcap */
-/* #undef HAVE_TERMCAP */
+#define HAVE_TERMCAP 1
 
 /* Define to 1 if you have the <termcap.h> header file. */
 /* #undef HAVE_TERMCAP_H */
@@ -194,7 +194,7 @@
 #define HAVE_UNISTD_H 1
 
 /* Define to 1 if you have the <xmmintrin.h> header file. */
-#define HAVE_XMMINTRIN_H 1
+/* #undef HAVE_XMMINTRIN_H */
 
 /* Define as const if the declaration of iconv() needs const. */
 #define ICONV_CONST 
@@ -213,7 +213,7 @@
 /* #undef MMX_choose_table */
 
 /* no debug build */
-/* #undef NDEBUG */
+#define NDEBUG 1
 
 /* build without hooks for analyzer */
 /* #undef NOANALYSIS */
@@ -287,13 +287,13 @@
 #define STDC_HEADERS 1
 
 /* IEEE754 compatible machine */
-#define TAKEHIRO_IEEE754_HACK 1
+/* #undef TAKEHIRO_IEEE754_HACK */
 
 /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
 #define TIME_WITH_SYS_TIME 1
 
 /* faster log implementation with less but enough precission */
-#define USE_FAST_LOG 1
+/* #undef USE_FAST_LOG */
 
 /* Enable extensions on AIX 3, Interix.  */
 #ifndef _ALL_SOURCE
